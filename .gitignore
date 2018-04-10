@@ -3,6 +3,9 @@
 ## We have git for backups!
 ##---------------------------------------------------
 
+# Images:
+*.tif
+
 # Python temporary files
 *.py~
 
