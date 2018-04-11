@@ -48,3 +48,12 @@ colorbar;
 xlabel(['X(\mu m)']);
 ylabel(['Y(\mu m)']);
 title(['log(fluo) ']);
+
+
+%% Plot the D spacing, the theta angle of the maximum of the rocking curve and the gamma for each pixel 
+
+% data_out(:,:,1) is the two theta value per pixel
+% data_out(:,:,2) is the D spacing value per pixel (using Bragg's law)
+% data_out(:,:,3) is the gamma value per pixel
+data_out = get_twoth(data_rock,1);
+

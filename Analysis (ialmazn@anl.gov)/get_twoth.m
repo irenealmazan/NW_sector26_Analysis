@@ -17,21 +17,18 @@ data_out(:,:,2) = lambda./(2*sind(data_out(:,:,1)/2));
 
 XRF1 = data.scan(1).XRF;
 if(plotflag)
-%figure(121);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),data_out(:,:,1));axis image;colormap hot; shading interp; title('Two theta');set(gca, 'YDir', 'normal');colorbar;
-%figure(122);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),data_out(:,:,2));axis image;colormap hot; shading interp; title('D spacing');set(gca, 'YDir', 'normal');colorbar;
-%figure(123);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),data_out(:,:,3));axis image;colormap hot; shading interp; title('Gamma');set(gca, 'YDir', 'normal');colorbar;
-fluo = data.scan(1).XRF(:,:,1);
-maxfluo = max(fluo(:));
-cutoff = 0.3;
-ind = find(fluo < cutoff*maxfluo);
-tempm=data_out(:,:,1);tempm(ind)=NaN;
-figure(124);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('Two theta');set(gca, 'YDir', 'normal');colorbar;
-tempm=data_out(:,:,2);tempm(ind)=NaN;
-figure(125);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('D spacing');set(gca, 'YDir', 'normal');colorbar;
-tempm=data_out(:,:,3);tempm(ind)=NaN;
-figure(126);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('Gamma');set(gca, 'YDir', 'normal');colorbar;
-tempm=data.thcen;tempm(ind)=NaN;
-figure(127);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('Theta');set(gca, 'YDir', 'normal');colorbar;
-figure(128);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),fluo);axis image;colormap jet; shading interp; title('XRF');set(gca, 'YDir', 'normal');colorbar;
-
+    fluo = data.scan(1).XRF(:,:,1);
+    maxfluo = max(fluo(:));
+    cutoff = 0.3;
+    ind = find(fluo < cutoff*maxfluo);
+    tempm=data_out(:,:,1);twotheta(ind)=NaN;
+    figure(124);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('Two theta');set(gca, 'YDir', 'normal');colorbar;
+    tempm=data_out(:,:,2);tempm(ind)=NaN;
+    figure(125);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('D spacing');set(gca, 'YDir', 'normal');colorbar;
+    tempm=data_out(:,:,3);tempm(ind)=NaN;
+    figure(126);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('Gamma');set(gca, 'YDir', 'normal');colorbar;
+    tempm=data.thcen;tempm(ind)=NaN;
+    figure(127);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),tempm);axis image;colormap jet; shading interp; title('Theta');set(gca, 'YDir', 'normal');colorbar;
+    figure(128);clf;imagesc(XRF1(1,:,3),XRF1(:,1,2),fluo);axis image;colormap jet; shading interp; title('XRF');set(gca, 'YDir', 'normal');colorbar;
+    
 end
